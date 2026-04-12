@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whispers from the Salt House - Marek Thorne</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #242b27; 
+      --card-bg: #1a2e24; 
+      --text-light: #f0eee9; 
+      --text-muted: #a3b8ad; 
+      --accent-bright-green: #2a6b4a; 
+      --accent-bright-green-hover: #1e5237;
+      --accent-gold: #c49c66; 
+      --accent-gold-hover: #d6af7a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-light);
+      font-family: 'Lora', serif;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+    }
+
+    /* Navigation */
+    .nav-bar {
+      padding: 30px 40px;
+      text-align: left;
+    }
+
+    .back-link {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--text-light);
+    }
+
+    /* Book Detail Section */
+    .book-container {
+      max-width: 1000px;
+      margin: 0 auto 80px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 50px;
+      align-items: flex-start;
+    }
+
+    .cover-column {
+      flex: 1;
+      max-width: 350px;
+    }
+
+    .book-cover {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      border: 1px solid #111;
+    }
+
+    .info-column {
+      flex: 2;
+    }
+
+    .book-title {
+      font-size: 42px;
+      color: var(--accent-gold);
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .book-blurb {
+      font-size: 18px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .book-hook {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      padding-left: 15px;
+      border-left: 3px solid var(--accent-bright-green);
+    }
+
+    /* Retailer Grid */
+    .retailer-section h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #2d4a3b;
+      padding-bottom: 10px;
+    }
+
+    .retailer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .btn-retailer {
+      background-color: transparent;
+      color: var(--text-light);
+      border: 1px solid var(--accent-bright-green);
+      padding: 12px 15px;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-retailer:hover {
+      background-color: var(--accent-bright-green);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .book-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .book-hook {
+        border-left: none;
+        border-top: 3px solid var(--accent-bright-green);
+        padding-left: 0;
+        padding-top: 15px;
+      }
+
+      .retailer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-bar">
+    <a href="D:\codes\site.html" class="back-link">← Return to the Archives</a>
+  </div>
+
+  <div class="book-container">
+    
+    <div class="cover-column">
+      <img src="D:\codes\images\whispers-from-the-salt-house.png" alt="Whispers from the Salt House Cover" class="book-cover">
+    </div>
+
+    <div class="info-column">
+      <h1 class="book-title">Whispers from the Salt House</h1>
+      
+      <div class="book-blurb">
+        <p>The sea preserves what the living try to forget.</p><br>
+        <p>When Elowen Cadence inherits a decaying coastal manor, she uncovers a forbidden legacy: a lineage of women bound by an ancient pact to the tides. Now, as the house’s salt-worn walls begin to whisper and a dark hunger stirs beneath the cliffs, Elowen must break the cycle before the ocean reclaims her family’s debt in blood.</p>
+      </div>
+
+      <div class="book-hook">
+        Read if you like gothic horror, ancestral curses, and atmospheric mysteries where the sea is always watching.
+      </div>
+
+      <div class="retailer-section">
+        <h3>Available At:</h3>
+        <div class="retailer-grid">
+          <a href="https://books.apple.com/us/book/whispers-from-the-salt-house/id6757620660" target="_blank" class="btn-retailer">Apple Books</a>
+          <a href="https://www.barnesandnoble.com/w/whispers-from-the-salt-house-marek-thorne/1149166343?ean=2940183522525" target="_blank" class="btn-retailer">Barnes & Noble</a>
+          <a href="https://bookshop.org/p/books/whispers-from-the-salt-house-marek-thorne/b1aa7ee2dfb2534c?ean=9798233027192&next=t&digital=t" target="_blank" class="btn-retailer">Bookshop</a>
+          <a href="https://www.everand.com/book/978679616/Whispers-from-the-Salt-House" target="_blank" class="btn-retailer">Everand</a>
+          <a href="https://fable.co/book/x-9798233027192" target="_blank" class="btn-retailer">Fable</a>
+          <a href="https://www.smashwords.com/books/view/1941513" target="_blank" class="btn-retailer">Smashwords</a>
+          <a href="https://www.thalia.de/shop/home/artikeldetails/A1077928935" target="_blank" class="btn-retailer">Tolino</a>
+          <a href="https://shop.vivlio.com/product/9798233027192_9798233027192_10020/whispers-from-the-salt-house" target="_blank" class="btn-retailer">Vivlio</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

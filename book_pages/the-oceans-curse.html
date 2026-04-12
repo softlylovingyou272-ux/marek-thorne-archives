@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ocean's Curse - Marek Thorne</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #242b27; 
+      --card-bg: #1a2e24; 
+      --text-light: #f0eee9; 
+      --text-muted: #a3b8ad; 
+      --accent-bright-green: #2a6b4a; 
+      --accent-bright-green-hover: #1e5237;
+      --accent-gold: #c49c66; 
+      --accent-gold-hover: #d6af7a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-light);
+      font-family: 'Lora', serif;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+    }
+
+    /* Navigation */
+    .nav-bar {
+      padding: 30px 40px;
+      text-align: left;
+    }
+
+    .back-link {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--text-light);
+    }
+
+    /* Book Detail Section */
+    .book-container {
+      max-width: 1000px;
+      margin: 0 auto 80px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 50px;
+      align-items: flex-start;
+    }
+
+    .cover-column {
+      flex: 1;
+      max-width: 350px;
+    }
+
+    .book-cover {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      border: 1px solid #111;
+    }
+
+    .info-column {
+      flex: 2;
+    }
+
+    .book-title {
+      font-size: 42px;
+      color: var(--accent-gold);
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .book-blurb {
+      font-size: 18px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .book-hook {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      padding-left: 15px;
+      border-left: 3px solid var(--accent-bright-green);
+    }
+
+    /* Retailer Grid */
+    .retailer-section h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #2d4a3b;
+      padding-bottom: 10px;
+    }
+
+    .retailer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .btn-retailer {
+      background-color: transparent;
+      color: var(--text-light);
+      border: 1px solid var(--accent-bright-green);
+      padding: 12px 15px;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-retailer:hover {
+      background-color: var(--accent-bright-green);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .book-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .book-hook {
+        border-left: none;
+        border-top: 3px solid var(--accent-bright-green);
+        padding-left: 0;
+        padding-top: 15px;
+      }
+
+      .retailer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-bar">
+    <a href="D:\codes\site.html" class="back-link">← Return to the Archives</a>
+  </div>
+
+  <div class="book-container">
+    
+    <div class="cover-column">
+      <img src="D:\codes\images\the-oceans-curse.png" alt="The Ocean's Curse Cover" class="book-cover">
+    </div>
+
+    <div class="info-column">
+      <h1 class="book-title">The Ocean's Curse</h1>
+      
+      <div class="book-blurb">
+        <p>The abyss remembers.</p><br>
+        <p>When a renegade crew descends into the Sargasso Trench, they awaken an ancient consciousness that blurs the line between civilization and sea. Step into a deep-sea thriller where every discovery comes with a price—and the ocean always collects.</p>
+      </div>
+
+      <div class="book-hook">
+        Read if you crave claustrophobic dread, sentient ruins, and the haunting cost of forbidden knowledge.
+      </div>
+
+      <div class="retailer-section">
+        <h3>Available At:</h3>
+        <div class="retailer-grid">
+          <a href="https://books.apple.com/us/book/the-oceans-curse/id6752215732" target="_blank" class="btn-retailer">Apple Books</a>
+          <a href="https://www.barnesandnoble.com/w/the-oceans-curse-marek-thorne/1148240449?ean=2940182798358" target="_blank" class="btn-retailer">Barnes & Noble</a>
+          <a href="https://bookshop.org/p/books/the-ocean-s-curse-marek-thorne/59e83c316ba91a09?ean=9798231869923&next=t&digital=t" target="_blank" class="btn-retailer">Bookshop</a>
+          <a href="https://www.everand.com/book/992890116/The-Ocean-s-Curse" target="_blank" class="btn-retailer">Everand</a>
+          <a href="https://fable.co/book/x-9798231869923" target="_blank" class="btn-retailer">Fable</a>
+          <a href="https://www.smashwords.com/books/view/1849632" target="_blank" class="btn-retailer">Smashwords</a>
+          <a href="https://www.thalia.de/shop/home/artikeldetails/A1076787861" target="_blank" class="btn-retailer">Tolino</a>
+          <a href="https://shop.vivlio.com/product/9798231869923_9798231869923_10020/the-oceans-curse" target="_blank" class="btn-retailer">Vivlio</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

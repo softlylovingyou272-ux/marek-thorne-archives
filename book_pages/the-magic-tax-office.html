@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Magic Tax Office - Marek Thorne</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #242b27; 
+      --card-bg: #1a2e24; 
+      --text-light: #f0eee9; 
+      --text-muted: #a3b8ad; 
+      --accent-bright-green: #2a6b4a; 
+      --accent-bright-green-hover: #1e5237;
+      --accent-gold: #c49c66; 
+      --accent-gold-hover: #d6af7a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-light);
+      font-family: 'Lora', serif;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+    }
+
+    /* Navigation */
+    .nav-bar {
+      padding: 30px 40px;
+      text-align: left;
+    }
+
+    .back-link {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--text-light);
+    }
+
+    /* Book Detail Section */
+    .book-container {
+      max-width: 1000px;
+      margin: 0 auto 80px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 50px;
+      align-items: flex-start;
+    }
+
+    .cover-column {
+      flex: 1;
+      max-width: 350px;
+    }
+
+    .book-cover {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      border: 1px solid #111;
+    }
+
+    .info-column {
+      flex: 2;
+    }
+
+    .book-title {
+      font-size: 42px;
+      color: var(--accent-gold);
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .book-blurb {
+      font-size: 18px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .book-hook {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      padding-left: 15px;
+      border-left: 3px solid var(--accent-bright-green);
+    }
+
+    /* Retailer Grid */
+    .retailer-section h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #2d4a3b;
+      padding-bottom: 10px;
+    }
+
+    .retailer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .btn-retailer {
+      background-color: transparent;
+      color: var(--text-light);
+      border: 1px solid var(--accent-bright-green);
+      padding: 12px 15px;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-retailer:hover {
+      background-color: var(--accent-bright-green);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .book-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .book-hook {
+        border-left: none;
+        border-top: 3px solid var(--accent-bright-green);
+        padding-left: 0;
+        padding-top: 15px;
+      }
+
+      .retailer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-bar">
+    <a href="D:\codes\site.html" class="back-link">← Return to the Archives</a>
+  </div>
+
+  <div class="book-container">
+    
+    <div class="cover-column">
+      <img src="D:\codes\images\the-magic-tax-office.png" alt="The Magic Tax Office Cover" class="book-cover">
+    </div>
+
+    <div class="info-column">
+      <h1 class="book-title">The Magic Tax Office</h1>
+      
+      <div class="book-blurb">
+        <p>Death, taxes, and unregistered necromancy.</p><br>
+        <p>Arthur Pendelton thought auditing magical entities would be a quiet desk job. Instead, he spends his days dealing with tax-evading dragons, wizards trying to write off doomsday devices as business expenses, and the occasional cursed ledger. But when a massive discrepancy in the kingdom's magical reserves points to a sinister plot, Arthur and his goblin intern must balance the books before reality itself goes bankrupt.</p>
+      </div>
+
+      <div class="book-hook">
+        Read if you love cozy urban fantasy, bureaucratic humor, and the thrilling tension of a perfectly executed tax audit against a dark lord.
+      </div>
+
+      <div class="retailer-section">
+        <h3>Available At:</h3>
+        <div class="retailer-grid">
+          <a href="https://books.apple.com/us/book/the-magic-tax-office/id6760207633" target="_blank" class="btn-retailer">Apple Books</a>
+          <a href="https://www.barnesandnoble.com/w/the-magic-tax-office-marek-thorne/1149639223?ean=2940183267952" target="_blank" class="btn-retailer">Barnes & Noble</a>
+          <a href="https://bookshop.org/p/books/the-magic-tax-office-marek-thorne/322d5cef86904dea?ean=9798233447433&next=t&digital=t" target="_blank" class="btn-retailer">Bookshop</a>
+          <a href="https://www.everand.com/book/1008709265/The-Magic-Tax-Office" target="_blank" class="btn-retailer">Everand</a>
+          <a href="https://fable.co/book/x-9798233447433" target="_blank" class="btn-retailer">Fable</a>
+          <a href="https://www.smashwords.com/books/view/1983730" target="_blank" class="btn-retailer">Smashwords</a>
+          <a href="https://www.thalia.de/shop/home/artikeldetails/A1078504025" target="_blank" class="btn-retailer">Tolino</a>
+          <a href="https://shop.vivlio.com/product/9798233447433_9798233447433_10020/the-magic-tax-office" target="_blank" class="btn-retailer">Vivlio</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

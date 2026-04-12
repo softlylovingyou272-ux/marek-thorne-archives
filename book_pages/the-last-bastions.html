@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Last Bastions - Marek Thorne</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #242b27; 
+      --card-bg: #1a2e24; 
+      --text-light: #f0eee9; 
+      --text-muted: #a3b8ad; 
+      --accent-bright-green: #2a6b4a; 
+      --accent-bright-green-hover: #1e5237;
+      --accent-gold: #c49c66; 
+      --accent-gold-hover: #d6af7a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-light);
+      font-family: 'Lora', serif;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+    }
+
+    /* Navigation */
+    .nav-bar {
+      padding: 30px 40px;
+      text-align: left;
+    }
+
+    .back-link {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--text-light);
+    }
+
+    /* Book Detail Section */
+    .book-container {
+      max-width: 1000px;
+      margin: 0 auto 80px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 50px;
+      align-items: flex-start;
+    }
+
+    .cover-column {
+      flex: 1;
+      max-width: 350px;
+    }
+
+    .book-cover {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      border: 1px solid #111;
+    }
+
+    .info-column {
+      flex: 2;
+    }
+
+    .book-title {
+      font-size: 42px;
+      color: var(--accent-gold);
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .book-blurb {
+      font-size: 18px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .book-hook {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      padding-left: 15px;
+      border-left: 3px solid var(--accent-bright-green);
+    }
+
+    /* Retailer Grid */
+    .retailer-section h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #2d4a3b;
+      padding-bottom: 10px;
+    }
+
+    .retailer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .btn-retailer {
+      background-color: transparent;
+      color: var(--text-light);
+      border: 1px solid var(--accent-bright-green);
+      padding: 12px 15px;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-retailer:hover {
+      background-color: var(--accent-bright-green);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .book-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .book-hook {
+        border-left: none;
+        border-top: 3px solid var(--accent-bright-green);
+        padding-left: 0;
+        padding-top: 15px;
+      }
+
+      .retailer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-bar">
+    <a href="D:\codes\site.html" class="back-link">← Return to the Archives</a>
+  </div>
+
+  <div class="book-container">
+    
+    <div class="cover-column">
+      <img src="D:\codes\images\the-last-bastions.png" alt="The Last Bastions Cover" class="book-cover">
+    </div>
+
+    <div class="info-column">
+      <h1 class="book-title">The Last Bastions</h1>
+      
+      <div class="book-blurb">
+        <p>The walls have held for a thousand years. Tonight, they fall.</p><br>
+        <p>Commander Kaelen stands at the edge of the world, tasked with defending Oakhaven—the final fortress city protecting humanity from the encroaching Scourge. As rations run low and betrayal festers within the high council, Kaelen must make a choice: uphold the sacred oaths that demand they stand their ground, or lead a desperate exodus into the very heart of the enemy's wasteland.</p>
+      </div>
+
+      <div class="book-hook">
+        Read if you crave epic siege warfare, grimdark fantasy, and desperate final stands where victory means just surviving until dawn.
+      </div>
+
+      <div class="retailer-section">
+        <h3>Available At:</h3>
+        <div class="retailer-grid">
+          <a href="https://books.apple.com/us/book/the-last-bastions/id6759487956" target="_blank" class="btn-retailer">Apple Books</a>
+          <a href="https://www.barnesandnoble.com/w/the-last-bastions-marek-thorne/1149528020?ean=2940183383027" target="_blank" class="btn-retailer">Barnes & Noble</a>
+          <a href="https://bookshop.org/p/books/the-last-bastions-marek-thorne/d6afe688a2e75066?ean=9798233508196&next=t&digital=t" target="_blank" class="btn-retailer">Bookshop</a>
+          <a href="https://www.everand.com/book/1001359862/The-Last-Bastions" target="_blank" class="btn-retailer">Everand</a>
+          <a href="https://fable.co/book/x-9798233508196" target="_blank" class="btn-retailer">Fable</a>
+          <a href="https://www.smashwords.com/books/view/1973473" target="_blank" class="btn-retailer">Smashwords</a>
+          <a href="https://www.thalia.de/shop/home/artikeldetails/A1078331457" target="_blank" class="btn-retailer">Tolino</a>
+          <a href="https://shop.vivlio.com/product/9798233508196_9798233508196_10020/the-last-bastions" target="_blank" class="btn-retailer">Vivlio</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

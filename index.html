@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marek Thorne - Immersive Speculative Fiction</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #242b27; 
+      --card-bg: #1a2e24; 
+      --text-light: #f0eee9; 
+      --text-muted: #a3b8ad; 
+      --accent-bright-green: #2a6b4a; 
+      --accent-bright-green-hover: #1e5237;
+      --accent-gold: #c49c66; 
+      --accent-gold-hover: #d6af7a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-light);
+      font-family: 'Lora', serif;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1503756234508-e32369269deb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); 
+      background-size: cover;
+      background-position: center;
+      padding: 120px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(36, 43, 39, 0.75);
+    }
+
+    .hero-content {
+      background-color: rgba(26, 46, 36, 0.9); 
+      padding: 50px 40px;
+      text-align: center;
+      max-width: 800px;
+      width: 100%;
+      border: 1px solid #365243;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      color: var(--text-light);
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: var(--text-muted);
+      margin-bottom: 35px;
+    }
+
+    .btn-subscribe {
+      background-color: var(--accent-bright-green);
+      color: white;
+      padding: 16px 45px;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .btn-subscribe:hover {
+      background-color: var(--accent-bright-green-hover);
+      transform: translateY(-2px);
+    }
+
+    .archives {
+      padding: 80px 20px;
+    }
+
+    .archives h2 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 60px;
+      letter-spacing: 2px;
+      color: var(--text-light);
+    }
+
+    .book-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .book-card {
+      background-color: var(--card-bg); 
+      flex: 1;
+      min-width: 320px;
+      max-width: 360px;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 30px;
+      border: 1px solid #2d4a3b;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-gold);
+    }
+
+    .cover-wrapper {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .book-cover {
+      width: 160px;
+      height: auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      border: 1px solid #111;
+    }
+
+    .book-title {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+
+    .book-blurb {
+      text-align: left;
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .book-hook {
+      text-align: left;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--text-light);
+      margin-bottom: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #2d4a3b;
+      flex-grow: 1;
+    }
+
+    .btn-buy {
+      background-color: var(--accent-gold);
+      color: #1a1a1a;
+      padding: 15px 0;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 16px;
+      width: 100%;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+
+    .btn-buy:hover {
+      background-color: var(--accent-gold-hover);
+    }
+    
+    .btn-buy span {
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      font-size: 14px;
+      margin-top: 4px;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 20px;
+      }
+      .book-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Enter the Worlds of Marek Thorne</h1>
+      <p>Author of immersive speculative fiction. I create clear, engaging worlds and stories built on mystery, tension, and compelling characters.</p>
+      <a href="subscribe.html" class="btn-subscribe">Subscribe for New Books</a>
+    </div>
+  </header>
+
+  <section class="archives">
+    <h2>Dark Archives</h2>
+    
+    <div class="book-grid">
+      
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\hallowed-vows.png" alt="Hallowed Vows Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">Hallowed Vows</h3>
+        <div class="book-blurb">
+          Her future was a jewel-encrusted prison.<br><br>
+          In a world of stifling manners and merciless expectations, a young woman battles between family duty and a forbidden love that could ruin her. Step into a sweeping Victorian romance where every choice has a price, and the heart's desire is the most dangerous luxury of all.
+        </div>
+        <div class="book-hook">
+          Read if you crave tense societal drama, passionate defiance, and the bittersweet ache of choosing between your destiny and your heart.
+        </div>
+        <a href="book_pages/hallowed-vows.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\among-us-still.png" alt="Among Us Still Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">Among Us Still</h3>
+        <div class="book-blurb">
+          The town forgot them before they were even gone.<br><br>
+          In the misty isolation of Briar Hollow, a teacher notices the little things—a reflection out of sync, a memory that doesn't match, a neighbor's smile that doesn't quite reach their eyes. She soon uncovers a terrifying truth: people aren't just disappearing, they're being rewritten, replaced by something that learns, adapts, and wears their faces.
+        </div>
+        <div class="book-hook">
+          Read if you love slow-burn paranoia, small-town mysteries, and the chilling fear of not knowing who to trust—or if you can even trust yourself.
+        </div>
+        <a href="book_pages/among-us-still.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\glass-memory.png" alt="Glass Memory Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">Glass Memory</h3>
+        <div class="book-blurb">
+          In a city where memories are bought, sold, and weaponized, one woman holds a shard of the future—a murder that hasn't happened yet.<br><br>
+          Elara Vayne, a memory thief with a fractured past, uncovers a conspiracy that rewrites reality itself. Now she's hunted, haunted, and running out of time before the memory she carries becomes her own.
+        </div>
+        <div class="book-hook">
+          Read if you love cyber-noir thrillers, mind-bending twists, and a future where your past is the most dangerous weapon.
+        </div>
+        <a href="book_pages/glass-memory.html" class="btn-buy">
+          Get it Now
+          <span>Free!</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\the-oceans-curse.png" alt="The Ocean's Curse Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Ocean's Curse</h3>
+        <div class="book-blurb">
+          The abyss remembers.<br><br>
+          When a renegade crew descends into the Sargasso Trench, they awaken an ancient consciousness that blurs the line between civilization and sea. Step into a deep-sea thriller where every discovery comes with a price—and the ocean always collects.
+        </div>
+        <div class="book-hook">
+          Read if you crave claustrophobic dread, sentient ruins, and the haunting cost of forbidden knowledge.
+        </div>
+        <a href="book_pages/the-oceans-curse.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\the-whisper-archive.png" alt="The Whisper Archive Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Whisper Archive</h3>
+        <div class="book-blurb">
+          Some truths were never meant to be heard.<br><br>
+          When Noah Vex uncovers his father’s encrypted files, he awakens the Archive—a sentient network that feeds on secrets and demands obedience. Now, whispers only he can hear are tearing his mind apart, exposing hidden crimes, and turning his city into a battlefield of silence and control.
+        </div>
+        <div class="book-hook">
+          Read if you like psychological dread, digital ghosts, and the fight to reclaim your own mind before it’s rewritten forever.
+        </div>
+        <a href="book_pages/the-whisper-archive.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\the-iron-crown.png" alt="The Iron Crown Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Iron Crown</h3>
+        <div class="book-blurb">
+          A prince’s ambition forged his cage.<br><br>
+          Cursed into the form of an iron raven, Prince Corvan soars over the ruins of the kingdom he destroyed. To break the spell, he must confront the bloody truths of his past and sacrifice the very memories that make him who he is. In a world of shattered thrones and ancient magic, the price of redemption may be his last shred of humanity.
+        </div>
+        <div class="book-hook">
+          Read if you crave gothic tragedy, cursed transformations, and the heavy weight of a crown made of regret and rust.
+        </div>
+        <a href="book_pages/the-iron-crown.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\ashfall-cathedral.png" alt="Ashfall Cathedral Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">Ashfall Cathedral</h3>
+        <div class="book-blurb">
+          The ash never settles, and the gods are silent.<br><br>
+          In a world choked by dust, a monolithic cathedral awakens—not with prayer, but with cold, ancient code. A boy named Sethren, marked with glowing veins, is the key to its resurrection. Hunted by zealots, he must survive long enough to discover if he is the world's last savior or the final instrument of its programmed doom.
+        </div>
+        <div class="book-hook">
+          Read if you crave desolate beauty, machine gods, and the chilling horror of a destiny written not in prophecy, but in lines of code.
+        </div>
+        <a href="book_pages/ashfall-cathedral.html" class="btn-buy">
+          Get it Now
+          <span>Free!</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\radiant-decay-1.png" alt="Radiant Decay Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">Radiant Decay 1</h3>
+        <div class="book-blurb">
+          Memory is the most radioactive thing left.<br><br>
+          When Elian Vence enters the Dead Zone to find his sister, he awakens the Bloom—a sentient infection that feeds on identity. Now, haunting echoes are dragging him toward the secrets of Vault Iris before the Bloom finishes rewriting his consciousness forever.
+        </div>
+        <div class="book-hook">
+          Read if you like biological horror, post-apocalyptic dread, and the fight to keep your memories from being consumed.
+        </div>
+        <a href="book_pages/radiant-decay.html" class="btn-buy">
+          Get it Now
+          <span>Free!</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\the-hollow-gardens.png" alt="The Hollow Gardens Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Hollow Gardens</h3>
+        <div class="book-blurb">
+          Where life flourishes, souls are the price.<br><br>
+          When Lyra Hartwell enters the village of Althea to find her missing brother, she uncovers the Hollow Garden—a sentient landscape that feeds on human memories to keep the land fertile. Now, the whispers of the trapped dead are pulling her toward the garden’s dark heart, threatening to consume her identity and bind her to the soil forever.
+        </div>
+        <div class="book-hook">
+          Read if you like folk horror, sentient nature, and the heavy price of survival through soul-harvesting rituals.
+        </div>
+        <a href="book_pages/the-hollow-gardens.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\the-skin-collector.png" alt="The Skin Collector Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Skin Collector</h3>
+        <div class="book-blurb">
+          Identity is the ultimate disguise.<br><br>
+          When Detective Evelyn Cross investigates a series of "rehearsed" murders, she uncovers the Collector—a predator who studies his victims’ tiniest habits until he can wear their very skin. Now, as familiar faces turn into masks and reflections begin to lie, Evelyn must find the cracks in his perfection before her own identity is flayed and rewritten forever.
+        </div>
+        <div class="book-hook">
+          Read if you like psychological horror, identity theft, and the chilling dread of a killer who is already living your life.
+        </div>
+        <a href="book_pages/the-skin-collector.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\the-clockwork-heart.png" alt="The Clockwork Heart Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Clockwork Heart</h3>
+        <div class="book-blurb">
+          You can't weld a heart, but you can build a god.<br><br>
+          When master mechanic Eirene Calder implants a forbidden Aether Core to save her dying sister, she awakens "The Song"—an ancient frequency that begins rewriting her sister’s soul into living clockwork. Now, hunted by an Archon who sees her sister as a battery for a dying city, Eirene must stop the transformation before the machine claims them both forever.
+        </div>
+        <div class="book-hook">
+          Read if you like gritty steampunk rebellion, biological horror, and the price of sisterly love.
+        </div>
+        <a href="book_pages/the-clockwork-heart.html" class="btn-buy">
+          Get it Now
+          <span>Free!</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\whispers-from-the-salt-house.png" alt="Whispers from the Salt House Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">Whispers from the Salt House</h3>
+        <div class="book-blurb">
+          The sea preserves what the living try to forget.<br><br>
+          When Elowen Cadence inherits a decaying coastal manor, she uncovers a forbidden legacy: a lineage of women bound by an ancient pact to the tides. Now, as the house’s salt-worn walls begin to whisper and a dark hunger stirs beneath the cliffs, Elowen must break the cycle before the ocean reclaims her family’s debt in blood.
+        </div>
+        <div class="book-hook">
+          Read if you like gothic horror, ancestral curses, and atmospheric mysteries where the sea is always watching.
+        </div>
+        <a href="book_pages/whispers-from-the-salt-house.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\when-the-stars-went-out.png" alt="When The Stars Went Out Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">When The Stars Went Out</h3>
+        <div class="book-blurb">
+          The universe didn't just go dark; it was stolen.<br><br>
+          When the stars vanish without warning, astrophysicist Kaelen Dhore must protect Sera—a girl who can "hear" the missing constellations—from a cult worshipping the void. Together, they must navigate a world of cosmic dread to reclaim the sky before the shadows claim humanity forever.
+        </div>
+        <div class="book-hook">
+          Read if you like cosmic mystery, apocalyptic survival, and the haunting beauty of a world without light.
+        </div>
+        <a href="book_pages/when-the-stars-went-out.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\the-children-of-stillwater-lake.png" alt="The Children of Stillwater Lake Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Children of Stillwater Lake</h3>
+        <div class="book-blurb">
+          In Stillwater, the lake doesn't drown children—it perfects them.<br><br>
+          Every child is Taken into the dark water for exactly twenty-four hours, returning with their flaws, fears, and emotions entirely scrubbed away. But sixteen-year-old Eli Turner is "Unchosen." Ignored by the water, he is forced to act as the town's emotional janitor, carrying the toxic, physical grief the lake spits back out. When a six-year-old boy is Taken, Eli commits the ultimate sin: he steals a jar of the boy's stripped trauma, breaking the town's forced peace and awakening a hungry, forgotten force beneath the surface.
+        </div>
+        <div class="book-hook">
+          Read if you crave eerie small-town cults, psychological horror, and a mind-bending fight against a supernatural force that steals your humanity to make you perfect.
+        </div>
+        <a href="book_pages/the-children-of-stillwater-lake.html" class="btn-buy">
+          Get it Now
+          <span>Free!</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\the-hollow-man.png" alt="The Hollow Man Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Hollow Man</h3>
+        <div class="book-blurb">
+          Evan Calder is an architectural surveyor who understands the truth of empty spaces. But when he begins to literally hollow out—losing his heartbeat, his breath, and his physical density—he discovers he isn't sick. He is a vessel.<br><br>
+          Hunted by faceless "Watchers" and guided by a rogue occultist, Evan uncovers the terrifying truth behind the orphanage fire he survived as a child. He was manufactured to be a doorway, a living black hole designed to swallow Seattle and usher in the apocalyptic, silent geometry of the "Empty City." Now, he must find a way to collapse the void inside him before he accidentally erases the world.
+        </div>
+        <div class="book-hook">
+          Read if you crave cosmic architectural horror, existential dread, and a ticking-clock thriller where the apocalypse is absolute silence.
+        </div>
+        <a href="book_pages/the-hollow-man.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\the-last-bastions.png" alt="The Last Bastions Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Last Bastions</h3>
+        <div class="book-blurb">
+          In the dying concrete city of Oakhaven, the dead are not buried—they are planted. Their bodies yield "Legacy Fruit," which Archivists like Elara Vance consume to transcribe memories of the Old World. But the fruit is a lie.<br><br>
+          Beyond the city's Great Wall lies the Verdant—a predatory, bioluminescent forest controlled by a hive-mind known as the Great Banyan. The forest is deliberately rewriting humanity's history, editing the fruit's memories to instill species-wide guilt. When Elara discovers her grandfather’s hidden journal, she uncovers the devastating truth: the government is initiating the "Final Harvest," flooding the city with propaganda fruit to put the entire population into a permanent, willing sleep. Now, hunted by Archive drones and guided by a rogue Harvester, Elara must escape into the terrifying Wild Orchard to find the raw, unedited truth before humanity peacefully accepts its own extinction.
+        </div>
+        <div class="book-hook">
+          Read if you crave dystopian sci-fi, mind-bending memory manipulation, and a desperate race to reclaim stolen history from a bioluminescent horror.
+        </div>
+        <a href="book_pages/the-last-bastions.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\the-magic-tax-office.png" alt="The Magic Tax Office Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Magic Tax Office</h3>
+        <div class="book-blurb">
+          Arthur Pendelton is a Level 4 Mana Auditor who believes the tax code is the scaffolding of the universe. When an impossible "Infinite Refill" deduction at a rural tea shop catches his eye, he travels to Brambleton expecting a routine audit. Instead, he finds a town powered by illegal charm-laundering, a baker armed with flash-bang flour, and a sentient sourdough monster.<br><br>
+          But the real discrepancy lies hidden beneath the floorboards: a supposedly extinct dragon whose hoarded gold is anchoring a stabilization field for magical orphans. When Arthur's ruthless superiors arrive to liquidate the town and erase a centuries-old Ministry debt, the ultimate paper-pusher must team up with his sentient briefcase, Barnaby, and weaponize bureaucratic red tape to save them all.
+        </div>
+        <div class="book-hook">
+          Read if you crave cozy fantasy with a satirical bite, hilarious magical bureaucracy, and a rigid rule-follower breaking the law to save a dragon.
+        </div>
+        <a href="book_pages/the-magic-tax-office.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="D:\codes\images\the-gilded-plague.png" alt="The Gilded Plague Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Gilded Plague</h3>
+        <div class="book-blurb">
+          In the smog-choked city of Aurelion, the latest plague doesn't kill you—it turns you into a living masterpiece of solid gold. The Church of Radiance calls it an "Ascension," dragging the afflicted into their cathedral to be worshipped. But Dr. Elara Whitcombe knows the terrifying truth: the Church is harvesting human souls to power a captive, subterranean god, leaving behind empty golden husks.<br><br>
+          When Elara discovers the fatal gold lattice blooming beneath her own skin, she is forced into a desperate alliance with a dying aristocrat. Armed with a toxic silver elixir that preserves her humanity at the cost of agonizing pain, Elara must pull off an impossible heist into the heart of the Alchemical Guild. With the "Great Consecration" only days away—a ritual that will transmute the entire city into a mindless golden hive—she must find a way to shatter the Cathedral and kill a god before she becomes a statue herself.
+        </div>
+        <div class="book-hook">
+          Read if you crave gaslamp fantasy, alchemical horror, and a desperate heist against a corrupt theocracy where perfection is a death sentence.
+        </div>
+        <a href="book_pages/the-gilded-plague.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/the-ghost-ship-privateers.png" alt="The Ghost-Ship Privateers Cover" class="book-cover">
+        </div>
+        <h3 class="book-title">The Ghost-Ship Privateers</h3>
+        <div class="book-blurb">
+          Captain Mateo Cruz, a disgraced former Inquisitor, sails the haunted waters of the Caribbean aboard the <i>Sanctuary</i>, a privateer vessel armed with bell-metal cutlasses and holy water cannons. When Mateo and his crew—including a pistol-wielding nun and a bombastic master gunner—board a demonic Spanish galleon, they expect a routine exorcism. Instead, they uncover a terrifying conspiracy: the British Royal Navy isn't fighting the creatures of the Abyss, they are hiring them.<br><br>
+          Admiral Cutler is deliberately sacrificing merchant ships to thin the "Veil" between worlds, planning to weaponize the demonic horde for the Empire. Hunted by an unnatural British man-o'-war powered by stolen saint's fire, Mateo must steer his crew into the heart of an acidic Hell-Squall. To stop the apocalypse, they must become the ultimate predators in a sea where the water runs black and the dead refuse to drown.
+        </div>
+        <div class="book-hook">
+          Read if you crave swashbuckling dark fantasy, flintlock horror, and a desperate crew of holy rogues fighting demonic armadas on the high seas.
+        </div>
+        <a href="book_pages/the-ghost-ship-privateers.html" class="btn-buy">
+          Buy Now
+          <span>$1.99</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
