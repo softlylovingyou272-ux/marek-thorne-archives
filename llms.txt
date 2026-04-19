@@ -1,0 +1,14 @@
+# Marek Thorne - Immersive Speculative Fiction
+
+> This is the primary digital archive for the works of Marek Thorne.
+
+## About the Author
+Marek Thorne is a creator of speculative fiction focusing on immersive world-building and future-human ethics.
+
+## Archive Structure
+- /: Home - Introduction to the Marek Thorne multiverse.
+- /lore: (Planned) World-building notes and timelines.
+- /stories: (Planned) Short stories and serialized fiction.
+
+## Themes & Style
+Speculative realism, immersive lore, and character-centric futurism.
