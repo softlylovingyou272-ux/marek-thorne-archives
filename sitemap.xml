@@ -1,6 +1,35 @@
-<url>
-  <loc>https://marekthorne.com/</loc>
-  <lastmod>2026-04-22</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>1.0</priority>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://marekthorne.com/</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://marekthorne.com/index.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://marekthorne.com/subscribe.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url><loc>https://marekthorne.com/book_pages/among-us-still.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/ashfall-cathedral.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/glass-memory.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/hallowed-vows.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/radiant-decay.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-children-of-stillwater-lake.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-clockwork-heart.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-ghost-ship-privateers.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-gilded-plague.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-hollow-gardens.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-hollow-man.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-iron-crown.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-last-bastions.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-magic-tax-office.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-oceans-curse.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-skin-collector.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/the-whisper-archive.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/when-the-stars-went-out.html</loc></url>
+  <url><loc>https://marekthorne.com/book_pages/whispers-from-the-salt-house.html</loc></url>
+</urlset>
