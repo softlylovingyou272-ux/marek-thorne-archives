@@ -1,4 +1,4 @@
+Sitemap: https://marekthorne.com/sitemap.xml
+
 User-agent: *
 Allow: /
-
-Sitemap: https://softlylovingyou272-ux.github.io/marek-thorne-archives/sitemap.xml
