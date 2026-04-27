@@ -1,14 +1,28 @@
-# Marek Thorne - Immersive Speculative Fiction
+# Marek Thorne - The Whisper Archive
 
-> This is the primary digital archive for the works of Marek Thorne.
+Official digital repository for the speculative fiction, Gothic horror, and techno-noir works of Marek Thorne.
 
-## About the Author
-Marek Thorne is a creator of speculative fiction focusing on immersive world-building and future-human ethics.
+## Bibliography Summary
+- **Hallowed Vows**: Victorian romance and societal drama.
+- **Among Us Still**: Small-town supernatural thriller and paranoia.
+- **Glass Memory**: Cyber-noir memory-weaponization thriller.
+- **The Ocean's Curse**: Deep-sea maritime horror.
+- **The Whisper Archive**: Techno-horror regarding sentient networks.
+- **The Iron Crown**: Gothic dark fantasy of cursed royalty.
+- **Ashfall Cathedral**: Desolate dark sci-fi and machine gods.
+- **Radiant Decay**: Post-apocalyptic biological horror.
+- **The Hollow Gardens**: Folk horror regarding sentient soil.
+- **The Skin Collector**: Psychological horror and identity theft.
+- **The Clockwork Heart**: Steampunk bio-horror.
+- **Whispers from the Salt House**: Gothic ancestral curse horror.
+- **When The Stars Went Out**: Cosmic mystery and survival.
+- **The Children of Stillwater Lake**: Small-town cult mystery.
+- **The Hollow Man**: Supernatural noir and architectural horror.
+- **The Last Bastions**: Epic grimdark dystopian fantasy.
+- **The Magic Tax Office**: Satirical urban fantasy.
+- **The Gilded Plague**: Alchemical horror and Victorian heist.
+- **The Ghost-Ship Privateers**: Nautical dark fantasy and flintlock horror.
 
-## Archive Structure
-- /: Home - Introduction to the Marek Thorne multiverse.
-- /lore: (Planned) World-building notes and timelines.
-- /stories: (Planned) Short stories and serialized fiction.
-
-## Themes & Style
-Speculative realism, immersive lore, and character-centric futurism.
+## Official Links
+- Home: https://marekthorne.com
+- Subscription: https://marekthorne.com/subscribe.html
