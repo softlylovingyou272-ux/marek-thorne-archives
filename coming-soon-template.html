@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>[BOOK TITLE] | Coming Soon | Marek Thorne</title>
+  <meta name="description" content="'[BOOK TITLE]' is currently being transcribed for the Whisper Archive. Subscribe for release updates.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="..\images\logo-circle.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>  
+    :root {
+      --bg-color: #242b27; 
+      --card-bg: #1a2e24; 
+      --text-light: #f0eee9; 
+      --text-muted: #a3b8ad; 
+      --accent-bright-green: #2a6b4a; 
+      --accent-bright-green-hover: #1e5237;
+      --accent-gold: #c49c66; 
+      --accent-gold-hover: #d6af7a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: var(--bg-color); color: var(--text-light); font-family: 'Lora', serif; line-height: 1.7; }
+    h1, h2, h3 { font-family: 'Cinzel', serif; font-weight: 500; }
+
+    /* Navigation */
+    .nav-bar { padding: 30px 40px; text-align: left; }
+    .back-link { color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel', serif; font-size: 16px; font-weight: 700; letter-spacing: 1px; transition: color 0.3s ease; }
+    .back-link:hover { color: var(--text-light); }
+
+    /* Book Detail Section */
+    .book-container { max-width: 1000px; margin: 0 auto 80px auto; padding: 0 20px; display: flex; gap: 50px; align-items: flex-start; }
+    .cover-column { flex: 1; max-width: 350px; }
+    
+    /* Grayscale cover for unavailable books */
+    .book-cover { 
+      width: 100%; 
+      height: auto; 
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+      border: 1px solid #111; 
+      filter: grayscale(100%) opacity(0.7);
+    }
+    
+    .info-column { flex: 2; }
+    
+    .status-tag { 
+      font-family: 'Cinzel'; 
+      color: var(--text-muted); 
+      font-size: 12px; 
+      letter-spacing: 3px; 
+      margin-bottom: 10px; 
+      display: block;
+      border: 1px solid #365243;
+      width: fit-content;
+      padding: 2px 10px;
+    }
+
+    .book-title { font-size: 42px; color: var(--accent-gold); margin-bottom: 15px; line-height: 1.2; }
+    .book-blurb { font-size: 18px; color: var(--text-light); margin-bottom: 30px; }
+    
+    .notify-section { 
+      margin-top: 40px; 
+      padding: 30px;
+      background-color: var(--card-bg);
+      border: 1px solid #2d4a3b;
+    }
+    
+    .notify-section h3 { font-size: 22px; margin-bottom: 15px; color: var(--text-light); }
+    
+    .btn-notify { 
+      display: inline-block;
+      background-color: var(--accent-bright-green); 
+      color: white; 
+      padding: 15px 30px; 
+      text-align: center; 
+      text-decoration: none; 
+      font-family: 'Cinzel', serif; 
+      font-weight: 700; 
+      font-size: 16px; 
+      letter-spacing: 1px; 
+      transition: all 0.3s ease; 
+      border: none;
+      cursor: pointer;
+    }
+    .btn-notify:hover { background-color: var(--accent-bright-green-hover); transform: translateY(-2px); }
+
+    @media (max-width: 768px) {
+      .book-container { flex-direction: column; align-items: center; text-align: center; }
+      .status-tag { margin: 0 auto 10px auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-bar">
+    <a href="../index.html" class="back-link">← Return to Archive</a>
+  </div>
+
+  <div class="book-container">
+    <div class="cover-column">
+      <img src="images/the-keyhole-spectacle.png" alt="Book Cover Placeholder" class="book-cover">
+    </div>
+
+    <div class="info-column">
+      <span class="status-tag">RESTRICTED ACCESS</span>
+      <h1 class="book-title">The Keyhole Spectacle</h1>
+      
+      <div class="book-blurb">
+        <p>This volume is currently undergoing restoration within the Whisper Archive. The digital contents remain encrypted until further notice.</p>
+      </div>
+
+      <div class="notify-section">
+        <h3>Release Pending</h3>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">Be notified the moment this file is decrypted and available for the public.</p>
+        <a href="../subscribe.html" class="btn-notify">NOTIFY ME ON RELEASE</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
